@@ -11,8 +11,18 @@
 </head>
 
 <body>
-    <iframe style="height: 700px; width: 420px;"
-        src="https://smartcheck.monthio.com/?clientId=90842&userId=iframeclient&test=true"></iframe>
+    <iframe id="monthioIframe" style="height: 700px; width: 420px;"
+        src="https://smartcheck.monthio.com/?clientId=90842&userId=&test=true"></iframe>
 </body>
+
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        let variable = Math.random() * (9999999 - 1) + 1
+        const iframe = document.getElementById("monthioIframe")
+        const title = document.getElementById("title")
+
+        iframe.setAttribute("src", `https://smartcheck.monthio.com/?clientId=90842&userId=${variable.toString()}&test=true`)
+    });
+</script>
 
 </html>
